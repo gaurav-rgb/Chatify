@@ -16,43 +16,31 @@ const Messages = () => {
 	}, [messages]);
 
 	return (
-		<div className='px-4 flex-1 overflow-auto'>
+		<div className='px-4 py-2 flex-1 overflow-auto bg-gray-50 rounded-lg shadow-inner space-y-2'>
 			{!loading &&
 				messages.length > 0 &&
-				messages.map((message) => (
-					<div key={message._id} ref={lastMessageRef}>
+				messages.map((message, index) => (
+					<div
+						key={message._id}
+						ref={index === messages.length - 1 ? lastMessageRef : null}
+						className='transition-transform transform hover:scale-105'
+					>
 						<Message message={message} />
 					</div>
 				))}
 
-			{loading && [...Array(3)].map((_, idx) => <MessageSkeleton key={idx} />)}
+			{loading && (
+				<div className='space-y-2'>
+					{[...Array(3)].map((_, idx) => (
+						<MessageSkeleton key={idx} />
+					))}
+				</div>
+			)}
 			{!loading && messages.length === 0 && (
-				<p className='text-center'>Send a message to start the conversation</p>
+				<p className='text-center text-gray-500'>Send a message to start the conversation</p>
 			)}
 		</div>
 	);
 };
+
 export default Messages;
-
-// STARTER CODE SNIPPET
-// import Message from "./Message";
-
-// const Messages = () => {
-// 	return (
-// 		<div className='px-4 flex-1 overflow-auto'>
-// 			<Message />
-// 			<Message />
-// 			<Message />
-// 			<Message />
-// 			<Message />
-// 			<Message />
-// 			<Message />
-// 			<Message />
-// 			<Message />
-// 			<Message />
-// 			<Message />
-// 			<Message />
-// 		</div>
-// 	);
-// };
-// export default Messages;
