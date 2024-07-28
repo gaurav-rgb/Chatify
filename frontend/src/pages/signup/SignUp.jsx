@@ -38,7 +38,7 @@ const SignUp = () => {
 						<input
 							type='text'
 							placeholder='John Doe'
-							className='w-full input input-bordered  h-10'
+							className='w-full input input-bordered  h-10 text-black'
 							value={inputs.fullName}
 							onChange={(e) => setInputs({ ...inputs, fullName: e.target.value })}
 						/>
@@ -51,7 +51,7 @@ const SignUp = () => {
 						<input
 							type='text'
 							placeholder='johndoe'
-							className='w-full input input-bordered h-10'
+							className='w-full input input-bordered h-10 text-black'
 							value={inputs.username}
 							onChange={(e) => setInputs({ ...inputs, username: e.target.value })}
 						/>
@@ -64,7 +64,7 @@ const SignUp = () => {
 						<input
 							type='password'
 							placeholder='Enter Password'
-							className='w-full input input-bordered h-10'
+							className='w-full input input-bordered h-10 text-black'
 							value={inputs.password}
 							onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
 						/>
@@ -77,7 +77,7 @@ const SignUp = () => {
 						<input
 							type='password'
 							placeholder='Confirm Password'
-							className='w-full input input-bordered h-10'
+							className='w-full input input-bordered h-10 text-black'
 							value={inputs.confirmPassword}
 							onChange={(e) => setInputs({ ...inputs, confirmPassword: e.target.value })}
 						/>
